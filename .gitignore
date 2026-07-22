@@ -1,0 +1,26 @@
+# Python
+api/.venv/
+api/**/__pycache__/
+api/**/*.egg-info/
+api/.pytest_cache/
+api/.env
+api/data/
+
+# Node / Next.js
+web/node_modules/
+web/.next/
+web/out/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# 本地工单 / Agent 约定 / 调研笔记 — 不进仓库
+.scratch/
+docs/
+AGENTS.md
+2026-07.md
+2026-07-agent-dev-landscape.md

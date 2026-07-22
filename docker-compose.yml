@@ -1,0 +1,22 @@
+# Local Postgres for judgment-forge development.
+# API and Next.js run on the host; only the database is containerized here.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: judgment-forge-db
+    environment:
+      POSTGRES_USER: judgment
+      POSTGRES_PASSWORD: judgment
+      POSTGRES_DB: judgment_forge
+    ports:
+      - "5432:5432"
+    volumes:
+      - judgment_forge_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U judgment -d judgment_forge"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  judgment_forge_pgdata:
